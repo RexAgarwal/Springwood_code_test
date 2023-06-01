@@ -8,10 +8,16 @@ The goal of the Rule Engine is to provide the following functionalities:
 
 ## How to Run the Application
 -> Install Python 3 on your system.
-Windows: Tkinter is usually included with the default Python installation,if it throws an error you need to reinstall Python and make sure to select the option to install Tcl/Tk and IDLE during the installation process.
-linux: sudo apt-get install python3-tk 
-Install the required dependencies by running the command: pip3 install -r requirements.txt.
-Run the application: python3 app.py.
+
+-> Windows: Tkinter is usually included with the default Python installation,
+   if it throws an error you need to reinstall Python and make sure to select the option to 
+   install Tcl/Tk and IDLE during the installation process.
+
+linux: sudo apt-get install python3-tk
+
+-> Install the required dependencies by running the command: pip3 install -r requirements.txt.
+
+-> Run the application: python3 app.py.
 
 ## About GUI
 The GUI window will open, allowing you to interact with the Rule Engine.
