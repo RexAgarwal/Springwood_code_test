@@ -59,21 +59,29 @@ class RuleEngineApp:
         self.action_source_dropdown = tk.OptionMenu(self.action_frame, self.action_source_dropdown_var, *self.engine.variables.keys())
         self.action_source_dropdown.grid(row=0, column=3)
 
+        self.action_destination_label = tk.Label(self.action_frame, text="Destination Variable:")
+        self.action_destination_label.grid(row=0, column=4)
+
+        self.action_destination_dropdown_var = tk.StringVar()
+        self.action_destination_dropdown = tk.OptionMenu(self.action_frame, self.action_destination_dropdown_var, *self.engine.variables.keys())
+        self.action_destination_dropdown.grid(row=0, column=5)
+
         self.arithmetic_operator_label = tk.Label(self.action_frame, text="Operator:")
-        self.arithmetic_operator_label.grid(row=0, column=4)
+        self.arithmetic_operator_label.grid(row=0, column=6)
 
         self.arithmetic_operator_dropdown_var = tk.StringVar()
         self.arithmetic_operator_dropdown = tk.OptionMenu(self.action_frame, self.arithmetic_operator_dropdown_var, "+", "-", "*", "/")
-        self.arithmetic_operator_dropdown.grid(row=0, column=5)
+        self.arithmetic_operator_dropdown.grid(row=0, column=7)
 
         self.arithmetic_value_label = tk.Label(self.action_frame, text="Value:")
-        self.arithmetic_value_label.grid(row=0, column=6)
+        self.arithmetic_value_label.grid(row=0, column=8)
 
         self.arithmetic_value_entry = tk.Entry(self.action_frame)
-        self.arithmetic_value_entry.grid(row=0, column=7)
+        self.arithmetic_value_entry.grid(row=0, column=9)
 
         self.action_button = tk.Button(self.action_frame, text="Apply Action", command=self.handle_action)
-        self.action_button.grid(row=0, column=8)
+        self.action_button.grid(row=0, column=10)
+
 
     def create_output_section(self):
         self.output_frame = tk.Frame(self.window)
@@ -99,6 +107,10 @@ class RuleEngineApp:
             self.arithmetic_operator_dropdown.grid(row=0, column=5)
             self.arithmetic_value_label.grid(row=0, column=6)
             self.arithmetic_value_entry.grid(row=0, column=7)
+            
+            self.action_destination_label.grid_forget()
+            self.action_destination_dropdown.grid_forget()
+            self.action_destination_dropdown_var.grid_forget()
         else:
             self.arithmetic_operator_label.grid_forget()
             self.arithmetic_operator_dropdown.grid_forget()
